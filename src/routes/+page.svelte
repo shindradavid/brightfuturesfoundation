@@ -44,8 +44,7 @@
 				</p>
 
 				<div class="cta">
-					<a href="/contact-us" class="btn btn-primary">Learn more</a>
-					<a href="/donate" class="btn btn-secondary">Donate</a>
+					<a href="/about-us" class="btn btn-primary">Learn more</a>
 				</div>
 			</div>
 
@@ -99,12 +98,16 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="about-us">
+		<h2>About us</h2>
+	</section>
 </main>
 
 <style lang="scss">
 	@use '../styles/utils';
 	.hero {
-		--height: 50vh;
+		--height: 70vh;
 		position: relative;
 		height: var(--height);
 		width: 100vw;
@@ -165,8 +168,12 @@
 				flex-direction: column;
 				padding-top: var(--spacing-2xl);
 
+				@include utils.respond-to('md-screens') {
+					padding-top: var(--spacing-2xl);
+				}
+
 				.heading {
-					font-size: var(--fs-lg);
+					font-size: var(--fs-md);
 					line-height: 1.2;
 
 					@include utils.respond-to('md-screens') {
@@ -179,8 +186,9 @@
 				}
 
 				.subheading {
-					font-weight: var(--fw-semibold);
+					font-weight: var(--fw-medium);
 					margin-top: var(--spacing-md);
+					color: #e2e2e2ff;
 
 					@include utils.respond-to('lg-screens') {
 						width: 80%;
@@ -198,12 +206,27 @@
 				align-items: center;
 				justify-content: center;
 				position: absolute;
-				bottom: -34%;
+				bottom: -70%;
 				width: 88%;
-
+				@media screen and (min-height: 600px) {
+					bottom: -54%;
+				}
+				@media screen and (min-height: 700px) {
+					bottom: -32%;
+				}
+				@media screen and (min-height: 780px) {
+					bottom: -39%;
+				}
+				@media screen and (min-height: 800px) {
+					bottom: -24%;
+				}
+				@media screen and (min-height: 900px) {
+					bottom: -14%;
+				}
 				@include utils.respond-to('lg-screens') {
 					position: static;
 				}
+
 				.form {
 					display: block;
 					width: 100%;
@@ -272,6 +295,27 @@
 			img {
 				object-fit: cover;
 			}
+		}
+	}
+
+	.about-us {
+		margin-top: 320px;
+
+		@media screen and (min-height: 600px) {
+			margin-top: 280px;
+		}
+		@media screen and (min-height: 700px) {
+			margin-top: 240px;
+		}
+		@media screen and (min-height: 800px) {
+			margin-top: 200px;
+		}
+		@media screen and (min-height: 900px) {
+			margin-top: 180px;
+		}
+
+		@include utils.respond-to('lg-screens') {
+			margin-top: 0px;
 		}
 	}
 </style>
