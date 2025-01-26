@@ -31,16 +31,18 @@
 {/if}
 
 <header class="header">
-	<img src="/images/header-logo.png" alt="Bright Futures Foundation logo" class="header__logo" />
+	<a href="/" class="header__logo">
+		<img src="/images/header-logo.png" alt="Bright Futures Foundation logo" />
+	</a>
 
 	<nav class="header__nav" class:open={openNav}>
 		<NavLink href="/" name="Home" />
 		<NavLink href="/about-us" name="About us" />
 		<NavLink href="/contact-us" name="Contact us" />
-		<a href="/donate" class="mobile-cta btn secondary">Donate</a>
+		<a href="/donate" class="mobile-cta btn btn-secondary">Donate</a>
 	</nav>
 
-	<a href="/donate" class="header__desktop-cta btn secondary">Donate</a>
+	<a href="/donate" class="header__desktop-cta btn btn-secondary">Donate</a>
 
 	<button class="header__burger" aria-label="Open menu" onclick={() => (openNav = !openNav)}>
 		{#if openNav}
@@ -148,6 +150,11 @@
 
 		&__logo {
 			height: 86%;
+			text-decoration: none;
+
+			img {
+				height: 100%;
+			}
 		}
 
 		&__nav {
@@ -254,12 +261,12 @@
 			flex-direction: column;
 			align-items: flex-start;
 			color: var(--clr-txt-primary-on-bg-accent-1);
-			gap: var(--spacing-md);
+			gap: var(--spacing-lg);
 
 			@include utils.respond-to('lg-screens') {
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr 1fr;
-				gap: var(--spacing-lg);
+				gap: var(--spacing-2xl);
 			}
 
 			.nav {
